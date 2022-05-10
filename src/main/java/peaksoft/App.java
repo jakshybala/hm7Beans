@@ -10,5 +10,18 @@ public class App {
         HelloWorld bean =
                 (HelloWorld) applicationContext.getBean("helloworld");
         System.out.println(bean.getMessage());
+
+        Cat catBean = (Cat) applicationContext.getBean("cat");
+        System.out.println(catBean.sayName());
+
+        Cat catBeanTwo = (Cat) applicationContext.getBean("cat");
+        System.out.println(catBeanTwo.sayName());
+
+        if (catBean.equals(catBeanTwo)) {
+            System.out.printf("%d and %dis equals", catBean, catBeanTwo);
+        }
+        else
+            System.out.println("Beans not equals");
+
     }
 }
